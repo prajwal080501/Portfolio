@@ -1,0 +1,29 @@
+import React from 'react'
+import {motion} from 'framer-motion'
+import {HiDownload} from "react-icons/hi"
+import { BsFillMoonStarsFill } from './../node_modules/react-icons/bs/index.esm';
+const Header = ({darkMode, setDarkMode}) => {
+    return (
+        <motion.nav 
+        initial={{y: -250}}
+        animate={{y: -10}}
+        transition={{delay: 0.2, type: 'spring', stiffness: 520, duration:1 }}
+        className="py-10 z-10  flex sticky top-0 
+         items-center justify-between">
+            <h1 className='text-4xl font-extrabold font-indie dark:text-white'>Portfolio</h1>
+            <ul className="flex items-center space-x-8">
+                <li>
+                    <BsFillMoonStarsFill onClick={() => setDarkMode(!darkMode)} className="cursor-pointer dark:text-white active:scale-75 duration-200 animate-pulse text-2xl" />
+                </li>
+                <l1 className="flex space-x- items-center">
+                    <a className=" bg-gradient-to-r from-fuchsia-500 to-blue-600 
+                    text-white px-4 py-2 border-none rounded-md text-transparent hover:opacity-80 bg-clip-text font-bold text-xl active:scale-95 duration-200" href="">Resume</a>
+                    <HiDownload className="cursor-pointer active:scale-75 dark:text-white text-black duration-200 text-2xl animate-bounce" />
+                </l1>
+
+            </ul>
+        </motion.nav>
+    )
+}
+
+export default Header
