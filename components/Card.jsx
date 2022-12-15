@@ -7,7 +7,7 @@ import { SiTailwindcss, SiExpress } from 'react-icons/si'
 import {TiWeatherCloudy} from "react-icons/ti"
 const Card = () => {
   return (
-    <div className="bg-white w-[105%] dark:bg-gradient-to-br from-pink-500 to-fuchsia-700 snap-center hover:scale-105 cursor-pointer hover:opacity-80 duration-200 ease space-y-5 drop-shadow-xl mx-auto rounded-md py-5 px-2">
+    <div className="bg-white w-[100%] lg:w-[105%] dark:bg-gradient-to-br from-blue-500 to-sky-700 snap-center hover:scale-105 cursor-pointer hover:opacity-80 duration-200 ease space-y-8 drop-shadow-xl mx-auto rounded-md py-5 px-2">
             <div className="flex items-center mx-auto w-fit space-x-5">
                 <h3 className="text-3xl py-1 font-bold dark:text-white">Weather App</h3>
             </div>
@@ -27,8 +27,8 @@ const Card = () => {
                 </div>
             </div>
             <div className="flex items-center  justify-center space-x-5 w-fit mx-auto">
-                <Link href="/" className="text-lg  w-fit rounded-md shadow-lg px-3 py-2  bg-white text-gray-800 duration-200 active:scale-95 mx-auto text-gray-200">View Code</Link>
-                <Link href="/" className="text-lg bg-white text-gray-800 text-center w-fit rounded-md shadow-lg px-3 py-2 duration-200 active:scale-95 mx-auto text-gray-200">View Live</Link>
+                <Link href="/" className="text-lg  w-fit rounded-md shadow-lg px-3 py-2  bg-blue-500 text-gray-800 duration-200 active:scale-95 mx-auto text-gray-200">View Code</Link>
+                <Link href="/" className="text-lg bg-blue-500 text-gray-800 text-center w-fit rounded-md shadow-lg px-3 py-2 duration-200 active:scale-95 mx-auto text-gray-200">View Live</Link>
                 </div>
             </div>
 
