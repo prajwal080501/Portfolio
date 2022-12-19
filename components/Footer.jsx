@@ -1,7 +1,8 @@
 import React from 'react'
 import {AiFillTwitterCircle, AiFillGithub, AiFillLinkedin} from 'react-icons/ai'
 
-const Footer = () => {
+const Footer = ({info}) => {
+    const socials = info.socials
   return (
     // modern reponsive footer tailwind css
     <footer className="bg-gray-100 dark:bg-black/20 mt-10 rounded-lg shadow-xl">
@@ -22,15 +23,15 @@ const Footer = () => {
                     </h1>
                 </div>
                 <div className="w-fit h-fit  p-5 space-x-5 flex  justify-center items-center">
-                    <a href="https://twitter.com/PrajwalLadkat" className="text-3xl dark:text-gray-300 text-gray-500 hover:text-gray-900">
-                        <AiFillTwitterCircle />
-                    </a>
-                    <a href="#" className="text-3xl dark:text-gray-300 text-gray-500 hover:text-gray-900">
-                        <AiFillGithub />
-                    </a>
-                    <a href="https://www.linkedin.com/in/prajwal-ladkat-5b1b1b1b3/" className="text-3xl dark:text-gray-300 text-gray-500 hover:text-gray-900">
-                        <AiFillLinkedin />
-                    </a>
+                {
+         socials?.map((social, index) => (
+          <a key={index} href={social.url} target="_blank" rel="noreferrer" className="hover:text-blue-60 text-xl lg:text-3xl dark:text-white duration-200 ease-linear hover:scale-110  w-fit dark:hover:text-blue-400">
+            {social.title === 'Twitter' && <AiFillTwitterCircle />}
+            {social.title === 'Github' && <AiFillGithub />}
+            {social.title === 'Linkedin' && <AiFillLinkedin />}
+          </a>
+          ))
+       }
                     </div>
             </div>
         <div className="max-w-7xl mx-auto py-5 px-4 overflow-hidden sm:px-6 lg:px-8">

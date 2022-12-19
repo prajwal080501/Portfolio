@@ -8,29 +8,51 @@ import Skills from '../components/Skills'
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion";
 import axios from "axios";
+import { groq } from "next-sanity";
+import {sanityClient} from "../sanity";
+
 export default function Home() {
   const [darkMode, setDarkMode] = useState(true);
-
+  const [info, setInfo] = useState({});
+  const [socials, setSocials] = useState({});
+  const [experience, setExperience] = useState([])
   const getPersonalData = () => {
-    // headers
-    const config = {
-      headers: {
-        'Content-Type': 'application/json',
-        'Allow-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
-      },
-    };
-    const data = axios.get("https://prajwalladkatportfolio.vercel.app/api/getInfo", config)
-    .then((res) => {
-      console.log(res.data);
-    }
-    )
-   
+    const query = groq`*[_type == "info"][0]{
+      ...,
+      socials[]->,
+    }`;
+    sanityClient.fetch(query).then((res) => {
+      setInfo(res);
+    });
   }
 
+  const getSocials = () => {
+    const query = groq`*[_type == "socials"]`;
+    sanityClient.fetch(query).then((res) => {
+      setSocials(res);
+      console.log(socials);
+    }
+    );
+  }
+
+  const getExperience = async () => {
+    const query = `*[_type == "experience"]{
+      ...,
+      technologies[]->
+    }`
+    const data = await sanityClient.fetch(query)
+    setExperience(data)
+}
+
+
   useEffect(() => {
+    // import data only once
     getPersonalData();
-  }, [])
+    getSocials();
+    getExperience()
+  }, []);
+
+
 
   return (
     <motion.div
@@ -46,15 +68,15 @@ export default function Home() {
       <main className='bg-gradient-to-br from-white to-black/10 dark:bg-gradient-to-r dark:from-[#2B2B2B] dark:to-[#000] duration-500 ease-linear px-0 lg:px-10 w-screen'>
         <section className="min-h-screen w-full">
           <Header darkMode={darkMode} setDarkMode={setDarkMode} />
-          <Hero />
+          <Hero info={info} socials={socials}/>
           <section className="flex bg-gray-100 
           dark:bg-black/20
            mt-10 rounded-lg shadow-xl flex-col items-center justify-center space-y-10">
-            <Experience />
+            <Experience experience={experience} />
             <Skills />
             <Projects />
           </section>
-          <Footer />
+          <Footer info={info}/>
         </section>
       </main>
     </motion.div>
