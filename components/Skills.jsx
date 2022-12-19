@@ -28,7 +28,7 @@ const Skills = () => {
                 <h3 className="text-3xl py-1 font-bold dark:text-white">Projects</h3>
             </div>
             <div>
-                <div className="grid dark:bg-transparent pt-8 grid-cols-2 md:grid-cols-2 lg:grid-cols-3 place-content-center place-items-center p-2 lg:p-5 bg-white gap-10 w-[98%] lg:w-[80%] mt-16 mb-5 shadow-xl rounded-md mx-auto">
+                <div className="grid dark:bg-transparent pt-8 grid-cols-2 md:grid-cols-2 lg:grid-cols-3 place-content-center place-items-center p-2 lg:p-5 bg-white gap-10 w-[98%] lg:w-[80%] mt-16 mb-5  rounded-md mx-auto">
                     {
                         skills?.map(skill => (
                             <>

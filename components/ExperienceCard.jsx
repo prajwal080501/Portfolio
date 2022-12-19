@@ -10,31 +10,31 @@ const ExperienceCard = ({ experience }) => {
             {
                 experience?.map((exp) => (
                     console.log(exp.technologies),
-                    <div key={exp._id} className="text-center dark:bg-gradient-to-br dark:from-fuchsia-500 dark:to-blue-700 flex flex-col items-center space-y-4 drop-shadow-xl rounded-2xl my-10 p-5 bg-white w-full lg:w-[60%] mx-auto ">
+                    <div key={exp._id} className="text-center bg-gradient-to-br from-fuchsia-500 to-blue-700 flex flex-col items-center space-y-4 shadow-2xl rounded-2xl my-10 p-5 bg-white w-full lg:w-[60%] mx-auto ">
                         <Image src={urlFor(exp.companyImage).url()} width={100} height={100} className="rounded-full" />
 
-                        <h3 className="text-2xl py-1 dark:text-gray-200 font-bold">{exp.company}</h3>
+                        <h3 className="text-2xl py-1 text-gray-100 dark:text-gray-200 font-bold">{exp.company}</h3>
                         {/* dates */}
                         <div className="flex items-center space-x-5">
                             <div className="flex  rounded-lg items-center space-x-2">
-                                <p className="text-lg text-gray-400 dark:text-gray-100 leading-8 text-center font-semibold">
+                                <p className="text-lg text-gray-100 dark:text-gray-100 leading-8 text-center font-semibold">
                                     {exp.dateStarted}
                                 </p>
-                                <p className="text-lg text-gray-400 dark:text-gray-100 leading-8 text-center font-semibold">
+                                <p className="text-lg text-gray-100 dark:text-gray-100 leading-8 text-center font-semibold">
                                     -
                                 </p>
-                                <p className="text-lg text-gray-400 dark:text-gray-100 leading-8 text-center font-semibold">
+                                <p className="text-lg text-gray-100 dark:text-gray-100 leading-8 text-center font-semibold">
                                     {exp.dateEnded}
                                 </p>
                             </div>
                             </div>
-                        <p className="text-lg text-gray-400 dark:text-gray-100 leading-8 text-center font-bold">
+                        <p className="text-lg text-gray-200 dark:text-gray-100 leading-8 text-center font-bold">
                             {exp.role}
                         </p>
-                        <p className="text-lg text-gray-800 dark:text-gray-200 leading-8 text-center w-[70%]">
+                        <p className="text-lg text-gray-100 dark:text-gray-200 leading-8 text-center w-[70%]">
                             {exp.description}
                         </p>
-                        <p className="text-lg text-gray-400 dark:text-gray-100 leading-8 text-center font-semibold">
+                        <p className="text-lg text-gray-100 dark:text-gray-100 leading-8 text-center font-semibold">
                             Tech Stack
                         </p>
                         <div className="
