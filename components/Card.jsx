@@ -25,8 +25,8 @@ const Card = ({project}) => {
                 }
             </div>
             <div className="flex items-center  justify-center space-x-5 w-fit mx-auto">
-                <Link href={project.linkToCode} className="text-lg  w-fit rounded-md shadow-lg px-3 py-2  bg-blue-500 text-gray-800 duration-200 active:scale-95 mx-auto text-gray-200">View Code</Link>
-                <Link href={project.linkToBuild} className="text-lg bg-blue-500 text-gray-800 text-center w-fit rounded-md shadow-lg px-3 py-2 duration-200 active:scale-95 mx-auto text-gray-200">View Live</Link>
+                <Link href={project.linkToCode} className="text-lg  w-fit rounded-md shadow-lg px-3 py-2  bg-blue-500  duration-200 active:scale-95 mx-auto text-gray-200">View Code</Link>
+                <Link href={project.linkToBuild} className="text-lg bg-blue-500 text-gray-800 text-center w-fit rounded-md shadow-lg px-3 py-2 duration-200 active:scale-95 mx-auto">View Live</Link>
                 </div>
             </div>
 

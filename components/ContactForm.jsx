@@ -3,14 +3,14 @@ import { motion } from 'framer-motion';
 
 const ContactForm = () => {
     return (
-        <div className="w-[95%] lg:w-fit rounded-lg dark:bg-transparent  bg-gray-200  mb-10 ">
+        <div id="contact" className="w-[95%] lg:w-fit rounded-lg dark:bg-transparent  bg-gray-200  mb-10 ">
             
         <motion.form
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5 }}
             onSubmit="mailto:iamprajwalladkat@gmail.com"
-            className="bg-transparent rounded-lg w-[80%] space-y-8 mx-auto items-center  p-8 flex flex-col bg-black/10 rounded-md md:flex-col md:justify-between"
+            className="w-[95%] lg:w-[80%] space-y-8 mx-auto items-center p-3 lg:p-8 flex flex-col bg-black/10 rounded-md md:flex-col md:justify-between"
         >
             <div className="flex flex-col items-center justify-center">
                 <h1 className=" text-xl lg:text-4xl pt-4 mt-5 font-bold bg-gradient-to-r from-fuchsia-500 to-blue-600 bg-clip-text text-transparent text-white p-2 text-center ">Contact Me</h1>

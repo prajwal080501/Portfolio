@@ -17,4 +17,6 @@
 
 html {
     font-family: 'Poppins', sans-serif;
+    /* smooth scroll */
+    scroll-behavior: smooth;
 }

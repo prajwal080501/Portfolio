@@ -9,7 +9,7 @@ const Hero = ({info}) => {
   const socials = info.socials;
   return (
     <>
-    <div className="text-center p-0 md:p-5 lg:p-10">
+    <div id="hero" className="text-center p-0 md:p-5 lg:p-10">
     <motion.h1
         initial={{ opacity:0, scale:0.5 }}
         animate={{opacity:1, scale:1}}

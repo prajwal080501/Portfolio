@@ -9,7 +9,7 @@ import ExperienceCard from './ExperienceCard';
 const Experience = ({ experience }) => {
 
     return (
-        <section className="w-full mx-auto p-2 lg:p-5 mt-10  mb-10 ">
+        <section id="experience" className="w-full mx-auto p-2 lg:p-5 mt-10  mb-10 ">
             <div className="flex items-center space-x-5">
                 <div className=" w-10 h-2 bg-gradient-to-br from-pink-600 to-fuchsia-400" />
                 <h3 className="text-3xl py-1 font-bold dark:text-white">Experience</h3>
