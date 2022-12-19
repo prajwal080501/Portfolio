@@ -50,7 +50,7 @@ export default function Home() {
   useEffect(() => {
     // import data only once
     getPersonalData();
-        getExperience()
+    getExperience()
   }, []);
 
 

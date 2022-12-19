@@ -1,8 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { HiDownload } from "react-icons/hi"
-import { BsFillMoonStarsFill } from './../node_modules/react-icons/bs/index.esm';
-import pdf from "./resume.pdf";
+import { BsFillMoonStarsFill } from 'react-icons/bs';
 const Header = ({ darkMode, setDarkMode }) => {
     return (
         <motion.nav
@@ -17,7 +16,7 @@ const Header = ({ darkMode, setDarkMode }) => {
                     <BsFillMoonStarsFill onClick={() => setDarkMode(!darkMode)} className="cursor-pointer dark:text-white active:scale-75 duration-200 animate-pulse text-2xl" />
                 </li>
                 <l1 className="flex space-x-4 items-center">
-                    <a href={pdf}
+                    <a href='/Resume.pdf'
                         download="Resume" className=" bg-gradient-to-r from-fuchsia-500 to-blue-600 
                     text-white px-1 lg:px-4 py-1 border-none rounded-md text-transparent hover:opacity-80 bg-clip-text font-bold text-xl active:scale-95 duration-200">Resume</a>
                     <HiDownload className="cursor-pointer active:scale-75 dark:text-white text-black duration-200 text-2xl animate-bounce" />
