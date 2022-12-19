@@ -13,8 +13,8 @@ const ContactForm = () => {
             className="bg-transparent rounded-lg w-[80%] space-y-8 mx-auto items-center  p-8 flex flex-col bg-black/10 rounded-md md:flex-col md:justify-between"
         >
             <div className="flex flex-col items-center justify-center">
-                <h1 className="text-4xl pt-4 mt-5 font-bold bg-gradient-to-r from-fuchsia-500 to-blue-600 bg-clip-text text-transparent text-white p-2">Contact Me</h1>
-                <p className="dark:text-gray-200 text-fuchsia-500 tracking-wider w-[80%] lg:w-1/2 text-center font-semibold">I&apos;m currently looking for new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I&apos;ll try my best to get back to you!</p>
+                <h1 className=" text-xl lg:text-4xl pt-4 mt-5 font-bold bg-gradient-to-r from-fuchsia-500 to-blue-600 bg-clip-text text-transparent text-white p-2 text-center ">Contact Me</h1>
+                <p className="dark:text-gray-200 text-fuchsia-500 tracking-wider w-[95%] lg:w-1/2 text-center font-semibold">I&apos;m currently looking for new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I&apos;ll try my best to get back to you!</p>
             </div>
             {/* mail phone button modern */}
             <div className="flex flex-row pt-4 justify-center space-x-4">
