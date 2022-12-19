@@ -31,7 +31,7 @@ const ExperienceCard = ({ experience }) => {
                         <p className="text-lg text-gray-200 dark:text-gray-100 leading-8 text-center font-bold">
                             {exp.role}
                         </p>
-                        <p className="text-lg text-gray-100 dark:text-gray-200 leading-8 text-center w-[70%]">
+                        <p className="text-lg text-gray-100 dark:text-gray-200 leading-8 text-center w-[90%]">
                             {exp.description}
                         </p>
                         <p className="text-lg text-gray-100 dark:text-gray-100 leading-8 text-center font-semibold">
