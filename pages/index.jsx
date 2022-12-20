@@ -12,7 +12,8 @@ import { groq } from "next-sanity";
 import { sanityClient } from "../sanity";
 import ContactForm from '../components/ContactForm'
 import FloatingButton from '../components/FloatingButton'
-
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 export default function Home() {
   const [darkMode, setDarkMode] = useState(true);
   const [info, setInfo] = useState({});
@@ -86,6 +87,19 @@ export default function Home() {
       <main className='bg-gradient-to-br from-white to-black/10 dark:bg-gradient-to-r dark:from-[#2B2B2B] dark:to-[#000] duration-500 ease-linear px-0 lg:px-10 w-screen'>
         <section className="min-h-screen w-full">
           <Header darkMode={darkMode} setDarkMode={setDarkMode} />
+          <ToastContainer 
+            position="bottom-center"
+            autoClose={5000}
+            hideProgressBar={true}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="dark"
+            
+            />
           <Hero info={info} socials={socials} />
           <section className="flex bg-gray-100 
           dark:bg-black/20 pb-5

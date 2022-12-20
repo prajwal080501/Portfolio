@@ -2,7 +2,21 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { HiDownload } from "react-icons/hi"
 import { BsFillMoonStarsFill } from 'react-icons/bs';
+ import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Header = ({ darkMode, setDarkMode }) => {
+    const notify = () => toast(darkMode ? "Light Mode On" : "Dark Mode On",
+        {
+            position: "bottom-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: darkMode ? "light" : "dark" ,
+        });
+
     return (
         <motion.nav
             initial={{ y: -250 }}
@@ -13,7 +27,11 @@ const Header = ({ darkMode, setDarkMode }) => {
             <h1 className='text-3xl w-fit lg:text-4xl font-extrabold font-indie dark:text-white'>Portfolio</h1>
             <ul className="flex items-center space-x-5">
                 <li>
-                    <BsFillMoonStarsFill onClick={() => setDarkMode(!darkMode)} className="cursor-pointer dark:text-white active:scale-75 duration-200 animate-pulse text-2xl" />
+                    <BsFillMoonStarsFill onClick={() => {
+                        notify();
+                        setDarkMode(!darkMode)
+                    }
+                    } className="cursor-pointer dark:text-white active:scale-75 duration-200 animate-pulse text-2xl" />
                 </li>
                 <l1 className="flex space-x-4 items-center">
                     <a href='/Resume.pdf'
