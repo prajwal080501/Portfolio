@@ -4,13 +4,17 @@ import { SiTailwindcss, SiExpress } from 'react-icons/si'
 import { BsFillLaptopFill } from 'react-icons/bs';
 import { urlFor } from '../sanity';
 import Image from 'next/image';
+import {motion} from 'framer-motion'
 const ExperienceCard = ({ experience }) => {
     return (
         <div>
             {
                 experience?.map((exp) => (
-                    console.log(exp.technologies),
-                    <div key={exp._id} className="text-center bg-gradient-to-br from-fuchsia-500 to-blue-700 flex flex-col items-center space-y-4 shadow-2xl rounded-2xl my-10 p-5 bg-white w-full lg:w-[60%] mx-auto ">
+                    <motion.div 
+                    initial={{opacity:0, y: 100}}
+                    whileInView={{opacity:1, y:0}}
+                    transition={{duration: 1}}
+                    key={exp._id} className="text-center bg-gradient-to-br from-fuchsia-500 to-blue-700 flex flex-col items-center space-y-4 shadow-2xl rounded-2xl my-10 p-5 bg-white w-full lg:w-[60%] mx-auto ">
                         <Image src={urlFor(exp.companyImage).url()} width={100} alt="image" height={100} className="rounded-full" />
 
                         <h3 className="text-2xl py-1 text-gray-100 dark:text-gray-200 font-bold">{exp.company}</h3>
@@ -51,7 +55,7 @@ const ExperienceCard = ({ experience }) => {
                             </div>
                 ))}
                         </div>
-                    </div>
+                    </motion.div>
                 ))
             }
         </div>

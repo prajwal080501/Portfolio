@@ -3,14 +3,14 @@ import { motion } from 'framer-motion';
 
 const ContactForm = () => {
     return (
-        <div id="contact" className="w-[95%] lg:w-fit rounded-lg  bg-gradient-to-br from-indigo-500 to-blue-600  mb-10 ">
+        <div id="contact" className="w-[95%] lg:w-[fit] rounded-lg  bg-gradient-to-b from-violet-700 to-fuchsia-600  mb-10 ">
             
         <motion.form
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5 }}
             onSubmit="mailto:iamprajwalladkat@gmail.com"
-            className="w-[95%] lg:w-[80%] space-y-8 mx-auto items-center p-3 lg:p-8 flex flex-col rounded-md md:flex-col md:justify-between"
+            className="w-[95%] lg:w-fit space-y-8 mx-auto items-center p-3 lg:p-8 flex flex-col rounded-md md:flex-col md:justify-between"
         >
             <div className="flex flex-col items-center justify-center">
                 <h1 className=" text-xl lg:text-4xl pt-4 mt-5 font-bold bg-gradient-to-r from-fuchsia-500 to-blue-600 bg-clip-text text-transparent text-white p-2 text-center ">Contact Me</h1>
@@ -55,7 +55,7 @@ const ContactForm = () => {
             />
             <button
                 type="submit"
-                className="py-2 px-4 rounded-lg shadow-md dark:bg-blue-600/80 hover:bg-gradient-to-r hover:from-blue-700 hover:to-fuchsia-500 active:scale-95 drop-shadow-2xl duration-200 ease-linear text-white font-bold w-full md:w-1/3"
+                className="py-2 px-4 rounded-lg shadow-md bg-white text-indigo-500 active:scale-95 drop-shadow-2xl duration-200 ease-linear font-bold w-full md:w-1/3"
             >
                 Send Message
             </button>

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { AiOutlineArrowUp } from 'react-icons/ai';
+import { IoIosArrowUp } from 'react-icons/io';
 const FloatingButton = ({ onClick }) => {
     const [scroll, setScroll] = useState(false);
 
@@ -19,11 +19,11 @@ const FloatingButton = ({ onClick }) => {
     <a
       href="#hero"
       className={
-        'fixed bottom-5 right-5 bg-blue-600 hover:scale-110 hover:bg-blue-700 dark:bg-blue-500 transition-all ease-linear rounded-full p-2 shadow-lg ' +
+        'fixed bottom-5 right-5 bg-blue-600 hover:scale-110 hover:bg-blue-700 dark:bg-white text-white transition-all ease-linear rounded-full p-2 shadow-lg ' +
         (scroll ? 'inline duration-200 eease-linear' : 'hidden ease-linear duration-200')
       }
     >
-      <AiOutlineArrowUp className='font-bold text-white text-4xl'/>
+      <IoIosArrowUp className='font-bold dark:text-black text-4xl'/>
     </a>
   );
 };
