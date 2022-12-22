@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import { sanityClient, urlFor } from "../sanity"
+import {motion} from 'framer-motion'
 import Card from './Card'
 const Projects = () => {
   const [projects, setProjects] = useState([])
@@ -32,7 +33,13 @@ const Projects = () => {
         {
           projects?.map(project => (
             <>
-              <div className="bg-white w-[100%] lg:w-[105%] dark:bg-gradient-to-br from-indigo-500 to-indigo-700 snap-center  cursor-pointer duration-200 ease space-y-8 drop-shadow-xl mx-auto rounded-md py-5 px-2">
+              <motion.div 
+              initial={{opacity:0, y: -100}}
+              whileInView={{opacity:1, y:0}}
+              transition={{duration:0.5}}
+              // animate once
+              viewportBoxVisible={true}
+              className="bg-white w-[100%] lg:w-[105%] dark:bg-gradient-to-br from-indigo-500 to-indigo-700 snap-center  cursor-pointer duration-200 ease space-y-8 drop-shadow-xl mx-auto rounded-md py-5 px-2">
                 <div className="flex items-center mx-auto w-fit space-x-5">
                   <h3 className="text-3xl py-1 font-bold dark:text-white">{project?.title}</h3>
                 </div>
@@ -55,7 +62,7 @@ const Projects = () => {
                   <Link href={project.linkToCode} className="text-lg  w-fit rounded-md shadow-lg px-3 py-2 bg-white text-black duration-200 active:scale-95 mx-auto hover:scale-105 hover:text-blue-500">View Code</Link>
                   <Link href={project.linkToBuild} className="text-lg bg-white text-black font-medium  text-center w-fit rounded-md shadow-lg px-3 py-2 duration-200 active:scale-95 mx-auto hover:text-blue-500 hover:scale-110">View Live</Link>
                 </div>
-              </div>
+              </motion.div>
             </>
           ))
         }
