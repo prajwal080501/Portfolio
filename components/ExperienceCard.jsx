@@ -10,10 +10,7 @@ const ExperienceCard = ({ experience }) => {
         <div>
             {
                 experience?.map((exp) => (
-                    <motion.div 
-                    initial={{opacity:0, y: 100}}
-                    whileInView={{opacity:1, y:0}}
-                    transition={{duration: 1}}
+                    <div 
                     key={exp._id} className="text-center bg-gradient-to-br from-fuchsia-500 to-blue-700 flex flex-col items-center space-y-4 shadow-2xl rounded-2xl my-10 p-5 bg-white w-full lg:w-[60%] mx-auto ">
                         <Image src={urlFor(exp.companyImage).url()} width={100} alt="image" height={100} className="rounded-full" />
 
@@ -55,7 +52,7 @@ const ExperienceCard = ({ experience }) => {
                             </div>
                 ))}
                         </div>
-                    </motion.div>
+                    </div>
                 ))
             }
         </div>

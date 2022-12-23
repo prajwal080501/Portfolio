@@ -3,8 +3,26 @@ import { motion } from 'framer-motion'
 import { HiDownload } from "react-icons/hi"
 import { BsFillMoonStarsFill } from 'react-icons/bs';
  import { ToastContainer, toast } from 'react-toastify';
+ import resume from "../public/resume.pdf"
+ import DownloadLink from "react-download-link";
+
 import 'react-toastify/dist/ReactToastify.css';
 const Header = ({ darkMode, setDarkMode }) => {
+    const handleClick = () => {
+        fetch("https://lavender-merrielle-94.tiiny.site/")
+            .then((res) => res.blob())
+            .then((blob) => {
+                const url = window.URL.createObjectURL(new Blob([blob]));
+                const link = document.createElement("a");
+
+                // click event
+                a.href = url;
+                a.setAttribute("download", "resume.pdf");
+                document.body.appendChild(a);
+                a.click();
+                a.remove();
+            });
+    }
     const notify = () => toast(darkMode ? "Light Mode On" : "Dark Mode On",
         {
             position: "bottom-center",
@@ -34,9 +52,10 @@ const Header = ({ darkMode, setDarkMode }) => {
                     } className="cursor-pointer dark:text-white active:scale-75 duration-200 animate-pulse text-2xl" />
                 </li>
                 <l1 className="flex space-x-4 items-center">
-                    <a href='/Resume.pdf'
-                        download="Resume" className=" bg-gradient-to-r from-fuchsia-500 to-blue-600 
-                    text-white px-1 lg:px-4 py-1 border-none rounded-md text-transparent hover:opacity-80 bg-clip-text font-bold text-xl active:scale-95 duration-200">Resume</a>
+                    <button onClick={handleClick}
+                         className=" bg-gradient-to-r from-fuchsia-500 to-blue-600 
+                    text-white px-1 lg:px-4 py-1 border-none rounded-md text-transparent hover:opacity-80 bg-clip-text font-bold text-xl active:scale-95 duration-200">Resume</button>
+                    
                     <HiDownload className="cursor-pointer active:scale-75 dark:text-white text-black duration-200 text-2xl animate-bounce" />
                 </l1>
 

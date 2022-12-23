@@ -3,16 +3,10 @@ import { motion } from 'framer-motion';
 
 const ContactForm = () => {
     return (
-        <motion.div
-            initial={{ opacity: 0, x: -100 }}
-            whileInView={{ opacity: 1, x:0 }}
-            transition={{ duration: 0.5 }}
+        <div
          id="contact" className="w-[95%] lg:w-[70%] pb-5 rounded-lg  bg-gradient-to-b from-violet-700 to-fuchsia-600  mb-10 ">
             
-        <motion.form
-            initial={{ y: -50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5 }}
+        <form
             onSubmit="mailto:iamprajwalladkat@gmail.com"
             className="w-[95%] lg:w-[95%] space-y-8 mx-auto items-center p-3 lg:p-8 flex flex-col rounded-md md:flex-col md:justify-between"
         >
@@ -63,8 +57,8 @@ const ContactForm = () => {
             >
                 Send Message
             </button>
-        </motion.form>
-        </motion.div>
+        </form>
+        </div>
     );
 }
 
