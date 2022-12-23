@@ -14,6 +14,7 @@ import ContactForm from '../components/ContactForm'
 import FloatingButton from '../components/FloatingButton'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
+import Blogs from '../components/Blogs'
 export default function Home() {
   const [darkMode, setDarkMode] = useState(true);
   const [info, setInfo] = useState({});
@@ -107,6 +108,7 @@ export default function Home() {
             <Experience experience={experience} />
             <Skills />
             <Projects />
+            <Blogs/>
             <ContactForm />
             <FloatingButton />
           </section>
