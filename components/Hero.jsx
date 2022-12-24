@@ -3,10 +3,15 @@ import { AiFillTwitterCircle, AiFillGithub, AiFillLinkedin } from 'react-icons/a
 import Image from "next/image"
 import profileImage from "../public/profile.png";
 import { motion } from "framer-motion"
-import { urlFor } from '../sanity';
-import { useEffect } from 'react';
+import { Cursor, useTypewriter } from "react-simple-typewriter"
+
 const Hero = ({ info }) => {
   const socials = info.socials;
+  const [text, count] = useTypewriter({
+    words: [`Web Developer`, "Blogger", "Singer", "Youtuber"],
+    loop: true,
+    delaySpeed: 2000,
+})
   return (
     <>
       <div id="hero" className="text-center p-0 md:p-5 lg:p-10">
@@ -17,7 +22,8 @@ const Hero = ({ info }) => {
           className="dark:text-white text-black text-4xl lg:text-6xl w-full font-extrabold">
           {info.name}
         </motion.h1>
-        <h3 className="text-3xl py-3  bg-gradient-to-br from-pink-600 to-fuchsia-400 text-transparent bg-clip-text font-extrabold">{info.role}</h3>
+        <h3 className="text-4xl py-3  bg-gradient-to-br from-pink-600 to-fuchsia-400 text-transparent bg-clip-text font-extrabold"><span>{text}</span> <Cursor cursorColor='#fff'/></h3>
+        
         <p className='text-base py-10 px-5 lg:px-0 lg:py-2 max-w-sm lg:max-w-xl mx-auto leading-8 font-semibold text-gray-800 dark:text-white '>
           {info.backgroundInformation}
         </p>

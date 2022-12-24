@@ -7,7 +7,6 @@ import Projects from '../components/Projects'
 import Skills from '../components/Skills'
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion";
-import axios from "axios";
 import { groq } from "next-sanity";
 import { sanityClient } from "../sanity";
 import ContactForm from '../components/ContactForm'
