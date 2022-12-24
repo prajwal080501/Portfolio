@@ -47,10 +47,13 @@ const Blogs = ({title}) => {
         getBlogs();
     }, [])
     return (
+        <>
         <section id="projects" className="w-full mx-auto p-3 lg:p-5 mt-10 mb-10">
             <Title title={title}/>
             <BlogCard blogs={blogs}/>
         </section>
+        {/* add a container with gradient color and a button for view more blogs */}
+        </>
     )
 }
 

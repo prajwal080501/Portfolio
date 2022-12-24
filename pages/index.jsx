@@ -14,12 +14,18 @@ import ContactForm from '../components/ContactForm'
 import FloatingButton from '../components/FloatingButton'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
+import { useRouter } from 'next/router';
 import Blogs from '../components/Blogs'
+import Script from 'next/script'
+import * as gtag from "../lib/gtag";
+
+
 export default function Home() {
   const [darkMode, setDarkMode] = useState(true);
   const [info, setInfo] = useState({});
   const [socials, setSocials] = useState({});
   const [experience, setExperience] = useState([])
+  const router = useRouter();
   const getPersonalData = () => {
     const query = groq`*[_type == "info"][0]{
       ...,
@@ -56,9 +62,21 @@ export default function Home() {
   }, []);
 
 
+ useEffect(() => {
+    const handleRouteChange = (url) => {
+      gtag.pageview(url);
+    };
+
+    router.events.on("routeChangeComplete", handleRouteChange);
+
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [router.events]);
 
   return (
-    <motion.div
+    <>
+      <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
@@ -85,10 +103,24 @@ export default function Home() {
         <meta name="theme-color" content="#ffffff" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-727MKKG5GH" />
+      <Script
+        id='google-analytics'
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+           window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-727MKKG5GH');
+        `,
+        }}
+      />
       <main className='bg-gradient-to-br from-white to-black/10 dark:bg-gradient-to-r dark:from-[#2B2B2B] dark:to-[#000] duration-500 ease-linear px-0 lg:px-10 w-screen'>
         <section className="min-h-screen w-full">
           <Header darkMode={darkMode} setDarkMode={setDarkMode} />
-          <ToastContainer 
+          <ToastContainer
             position="bottom-center"
             autoClose={5000}
             hideProgressBar={true}
@@ -99,8 +131,8 @@ export default function Home() {
             draggable
             pauseOnHover
             theme="dark"
-            
-            />
+
+          />
           <Hero info={info} socials={socials} />
           <section className="flex bg-gray-100 
           dark:bg-black/20 pb-5
@@ -108,7 +140,7 @@ export default function Home() {
             <Experience experience={experience} title="Experience" />
             <Skills title="Skills" />
             <Projects title="Projects" />
-            <Blogs title="Blogs"/>
+            <Blogs title="Blogs" />
             <ContactForm />
             <FloatingButton />
           </section>
@@ -116,5 +148,7 @@ export default function Home() {
         </section>
       </main>
     </motion.div>
-  )
+    </>
+  );
 }
+
