@@ -48,11 +48,17 @@ const Blogs = ({title}) => {
     }, [])
     return (
         <>
-        <section id="projects" className="w-full mx-auto p-3 lg:p-5 mt-10 mb-10">
+        <section id="blogs" className="relative w-full mx-auto p-3 lg:p-5 mt-10 mb-10">
             <Title title={title}/>
             <BlogCard blogs={blogs}/>
+            <div className='hidden lg:inline-flex absolute w-full h-40 item-end justify-center bg-gradient-to-t from-black via-black-100/90 to-transparent bottom-0 z-20'>
+                <Link href="https://prajwalladkat.hashnode.dev/" target="_blank">
+                    <motion.button 
+                    layout style={{width: 'fit-content'}} whileHover={{scale: 1.1}} whileTap={{scale: 0.9}} className=" text-black bg-white font-bold text-lg px-5 py-2 rounded-lg mt-16 mx-auto">View more blogs</motion.button>
+                </Link>
+            </div>
         </section>
-        {/* add a container with gradient color and a button for view more blogs */}
+
         </>
     )
 }
