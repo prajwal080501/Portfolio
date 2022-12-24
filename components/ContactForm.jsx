@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 
 const ContactForm = () => {
     return (
+        <>
         <div
          id="contact" className="w-[95%] lg:w-[70%] pb-5 rounded-lg  bg-gradient-to-b from-violet-700 to-fuchsia-600  mb-10 ">
             
@@ -11,7 +12,7 @@ const ContactForm = () => {
             className="w-[95%] lg:w-[95%] space-y-8 mx-auto items-center p-3 lg:p-8 flex flex-col rounded-md md:flex-col md:justify-between"
         >
             <div className="flex flex-col items-center justify-center">
-                <h1 className=" text-2xl lg:text-4xl pt-4 mt-5 font-bold bg-gradient-to-r from-fuchsia-500 to-blue-600 bg-clip-text text-transparent text-white p-2 text-center ">Contact Me</h1>
+                <h1 className=" text-2xl lg:text-4xl pt-4 mt-5 font-bold bg-gradient-to-r from-fuchsia-300 to-blue-200 bg-clip-text text-transparent text-white p-2 text-center ">Contact Me</h1>
                 <p className="text-gray-200 text-sm lg:text-lg dark:text-fuchsia-100 tracking-wider w-[95%] lg:w-1/2 text-center font-semibold">I&apos;m currently looking for new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I&apos;ll try my best to get back to you!</p>
             </div>
             {/* mail phone button modern */}
@@ -59,6 +60,7 @@ const ContactForm = () => {
             </button>
         </form>
         </div>
+        </>
     );
 }
 

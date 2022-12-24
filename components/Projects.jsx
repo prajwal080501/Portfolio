@@ -4,7 +4,8 @@ import React, { useEffect, useState } from 'react'
 import { sanityClient, urlFor } from "../sanity"
 import {motion} from 'framer-motion'
 import Card from './Card'
-const Projects = () => {
+import Title from './Title'
+const Projects = ({title}) => {
   const [projects, setProjects] = useState([])
 
   const getProjects = async () => {
@@ -25,10 +26,7 @@ const Projects = () => {
   }, [])
   return (
     <section id="projects" className="w-full mx-auto p-3 lg:p-5 mt-10 mb-10">
-      <div className="flex items-center space-x-5">
-        <div className=" w-10 h-2 bg-gradient-to-br from-pink-600 to-fuchsia-400" />
-        <h3 className="text-3xl py-1 font-bold dark:text-white">Projects</h3>
-      </div>
+       <Title title={title}/>
       <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 place-items-center place-content-center  scrollbar-hide p-1 mt-5 lg:mt-0 lg:p-5">
         {
           projects?.map(project => (
@@ -37,7 +35,6 @@ const Projects = () => {
               initial={{opacity:0, y: -100}}
               whileInView={{opacity:1, y:0}}
               transition={{duration:0.5}}
-              // animate once
               viewportBoxVisible={true}
               className="bg-white w-[100%] lg:w-[105%] dark:bg-gradient-to-br from-indigo-500 to-indigo-700 snap-center  cursor-pointer duration-200 ease space-y-8 drop-shadow-xl mx-auto rounded-md py-5 px-2">
                 <div className="flex items-center mx-auto w-fit space-x-5">

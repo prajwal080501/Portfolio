@@ -105,10 +105,10 @@ export default function Home() {
           <section className="flex bg-gray-100 
           dark:bg-black/20 pb-5
            mt-10 rounded-lg shadow-xl flex-col items-center justify-center space-y-10">
-            <Experience experience={experience} />
-            <Skills />
-            <Projects />
-            <Blogs/>
+            <Experience experience={experience} title="Experience" />
+            <Skills title="Skills" />
+            <Projects title="Projects" />
+            <Blogs title="Blogs"/>
             <ContactForm />
             <FloatingButton />
           </section>
