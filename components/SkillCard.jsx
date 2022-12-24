@@ -8,7 +8,7 @@ const SkillCard = ({skills}) => {
                         skills?.map(skill => (
                             <>
                                 <div className="flex  bg-gradient-to-br from-blue-500/30 to-pink-600/30 h-36 w-36 md:w-48 md:h-48 lg:w-64 lg:h-64 hover:scale-110 hover:bg-gray-100/10 rounded-md p-2 lg:p-5 duration-200 cursor-pointer items-center flex-col justify-center">
-                                    <Image src={urlFor(skill.icon).url()} height={50} width={50} alt="image" className="rounded-full p-2"
+                                    <Image src={urlFor(skill.icon).url()} quality={100} height={50} width={50} alt="image" className="rounded-full p-2"
                                     />
                                     <span className="dark:text-white text-xl lg:text-2xls text-center font-semibold">{skill.title}</span>
                                 </div>

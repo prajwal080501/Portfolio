@@ -17,6 +17,7 @@ import { useRouter } from 'next/router';
 import Blogs from '../components/Blogs'
 import Script from 'next/script'
 import * as gtag from "../lib/gtag";
+import NotificationBar from '../components/NotificationBar'
 
 
 export default function Home() {
@@ -59,6 +60,12 @@ export default function Home() {
     getPersonalData();
     getExperience()
   }, []);
+  {/* show notification bar for 5 second */}
+  const [showNotification, setShowNotification] = useState(true)
+  setTimeout(() => {
+    setShowNotification(false)
+  }, 10000);
+
 
 
  useEffect(() => {
@@ -79,7 +86,7 @@ export default function Home() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className={darkMode ? 'dark' : ""}>
+      className={darkMode ? 'dark w-full' : " w-full"}>
       <Head>
         <title>Prajwal&apos;s Portfolio</title>
         <meta name="description" content="Prajwal's portfolio web app" />
@@ -116,7 +123,10 @@ export default function Home() {
         `,
         }}
       />
+
       <main className='bg-gradient-to-br from-white to-black/10 dark:bg-gradient-to-r dark:from-[#2B2B2B] dark:to-[#000] duration-500 ease-linear px-0 lg:px-10 w-screen'>
+        {/* notification bar for 5 sec */}
+        {showNotification && <NotificationBar />}
         <section className="min-h-screen w-full">
           <Header darkMode={darkMode} setDarkMode={setDarkMode} />
           <ToastContainer
