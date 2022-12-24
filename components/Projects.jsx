@@ -40,7 +40,7 @@ const Projects = ({title}) => {
                 <div className="flex items-center mx-auto w-fit space-x-5">
                   <h3 className="text-3xl py-1 font-bold dark:text-white">{project?.title}</h3>
                 </div>
-                <p className="text-lg text-center w-[80%] mx-auto text-gray-500 dark:text-gray-100 font-medium">A weather app that shows the weather of a city. It uses the OpenWeatherMap API to fetch the weather data. It is built using React and Tailwind CSS.</p>
+                <p className="text-lg text-center w-[80%] mx-auto text-gray-500 dark:text-gray-100 font-medium">{project.summary}</p>
                 {/* techstack */}
                 <div className="flex flex-row  lg:space-y-0 items-center space-x-5 w-fit mx-auto 
             bg-gray-100 dark:bg-gray-900/30 shadow-md rounded-lg p-5
