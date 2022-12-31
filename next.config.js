@@ -15,7 +15,6 @@ const nextConfig = {
       'img.freepik.com', 
       'cdn.sanity.io'],
   },
-  // theme
   theme: {
     extend: {
       FontFace: {
