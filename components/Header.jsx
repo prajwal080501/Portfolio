@@ -52,9 +52,11 @@ const Header = ({ darkMode, setDarkMode }) => {
                     } className="cursor-pointer dark:text-white active:scale-75 duration-200 animate-pulse text-2xl" />
                 </li>
                 <l1 className="flex space-x-4 items-center">
-                    <button onClick={handleClick}
+                    <a href="./resume.pdf" download
                          className=" bg-gradient-to-r from-fuchsia-500 to-blue-600 
-                    text-white px-1 lg:px-4 py-1 border-none rounded-md text-transparent hover:opacity-80 bg-clip-text font-bold text-xl active:scale-95 duration-200">Resume</button>
+                    text-white px-1 lg:px-4 py-1 border-none rounded-md text-transparent hover:opacity-80 bg-clip-text font-bold text-xl active:scale-95 duration-200">
+                        <button>Resume</button>
+                    </a>
                     
                     <HiDownload className="cursor-pointer active:scale-75 dark:text-white text-black duration-200 text-2xl animate-bounce" />
                 </l1>
