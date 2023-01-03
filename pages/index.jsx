@@ -124,8 +124,7 @@ export default function Home() {
         }}
       />
 
-      <main className='bg-gradient-to-br from-white to-black/10 dark:bg-gradient-to-r dark:from-[#2B2B2B] dark:to-[#000] duration-500 ease-linear px-0 lg:px-10 w-screen'>
-        {/* notification bar for 5 sec */}
+      <main className=' bg-gradient-to-br from-[#2B2B2B] to-black duration-500 ease-linear px-0 lg:px-10 w-screen'>
         {showNotification && <NotificationBar />}
         <section className="min-h-screen w-full">
           <Header darkMode={darkMode} setDarkMode={setDarkMode} />

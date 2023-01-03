@@ -34,6 +34,7 @@ const Projects = ({title}) => {
               <motion.div 
               initial={{opacity:0, x: -100}}
               whileInView={{opacity:1, x:0}}
+              exit={{opacity:0, x: -100}}
               transition={{duration:0.5, delay:0.5}}
               viewportBoxVisible={true}
               className="bg-white w-[100%] lg:w-[105%] dark:bg-gradient-to-br from-indigo-500 to-indigo-700 snap-center  cursor-pointer duration-200 ease space-y-8 drop-shadow-xl mx-auto rounded-md py-5 px-2">

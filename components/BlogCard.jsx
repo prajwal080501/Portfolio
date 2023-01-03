@@ -1,9 +1,10 @@
 import Link from 'next/link'
 import React from 'react'
-
+import {motion} from 'framer-motion'
 const BlogCard = ({blogs}) => {
   return (
-    <div className=" mx-auto grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-16 place-items-center place-content-center scrollbar-hide p-1 mt-5 lg:mt-0 lg:p-5">
+    <div
+    className=" mx-auto grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-16 place-items-center place-content-center scrollbar-hide p-1 mt-5 lg:mt-0 lg:p-5">
     {
         // display recent 3 blogs
         blogs.slice(0,3).map((blog) => (
